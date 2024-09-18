@@ -15,14 +15,14 @@ const sendEmail = async (req: Request, res: Response) => {
             port: 587,
             secure: true,
             auth: {
-                user: 'joaoguilherme.2708@gmail.com',
-                pass: '7pecadoscapitais'
+                user: process.env.EMAIL,
+                pass: process.env.SENHA_GOOGLE_PORTIFOLIO
             }
         });
 
         const configEmail = {
-            from: email,
-            to: "joaoguilherme.2708@gmail.com",
+            from: "joaoguilherme.2708@gmail.com",
+            to: email,
             subject: assunto,
             text: mensagem
         }
